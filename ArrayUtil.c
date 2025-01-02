@@ -109,3 +109,23 @@ int find(int* arr, int search, int size) {
     }
     return -1;
 }
+
+int contains(const int* arr, int val) {
+    for (int i = 0; i < SIZE; ++i) {
+        if (arr[i] == val) {
+            return 1;
+        }
+    }
+    return 0;
+}
+
+void copyIf(const int* src, int* dest)
+{
+    int idx = 0;
+    for (int i = 0; i < SIZE; ++i) {
+        if (!contains(dest, src[i])) {
+            dest[idx] = src[i];
+            ++idx;
+        }
+    }
+}
